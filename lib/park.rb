@@ -21,4 +21,16 @@ class Park
       trail.length
     end.sum
   end
+
+  def trails_by_level
+    trail_level = {}
+    @trails.each do |trail|
+      if trail_level[trail.level].nil?
+        trail_level[trail.level] = [trail.name]
+      else
+         trail_level[trail.level] << trail.name
+      end
+    end
+    trail_level
+  end
 end
